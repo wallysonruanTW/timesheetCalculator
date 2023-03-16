@@ -26,7 +26,7 @@ function convertToDecimal(time) {
     return hours + minutes / 60;
 }
 
-function updateResult(checkInElementId, checkOutElementId, lunchCheckboxElementId, resultContainerElementId) {
+function updateResultUnit(checkInElementId, checkOutElementId, lunchCheckboxElementId, resultContainerElementId) {
     var resultTime = document.querySelector(resultContainerElementId);
 
     var time = calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElementId);
@@ -35,10 +35,10 @@ function updateResult(checkInElementId, checkOutElementId, lunchCheckboxElementI
     }
 }
 
-function updateFinalResult() {
+function updateResultTotal() {
     let results = document.querySelectorAll(".result__unit");
     let finalResult = 0;
-    let resultAll = document.querySelector("#result--all");
+    let resultAll = document.querySelector("#result__total");
 
     results.forEach((result) => {
         finalResult += result.value;
@@ -48,8 +48,8 @@ function updateFinalResult() {
 }
 
 
-function copyResult() {
-    var resultTime = document.querySelector("#result--all");
+function copyResultTotal() {
+    var resultTime = document.querySelector("#result__total");
     resultTime.select();
     navigator.clipboard.writeText(resultTime.value);
     alert("The value: "+ resultTime.value + " has been copied to the clipboard.");

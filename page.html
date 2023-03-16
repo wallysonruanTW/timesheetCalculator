@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <!-- <?!= include('stylesheet'); ?> -->
     <link rel="stylesheet" type="text/css" href="./style.css">
@@ -8,19 +9,33 @@
 <body class="wrapper">
     <div class="timecalc">
         <form onchange="updateResult();">
-            <div class="input_line">
-                <label for="checkin_time">CHECK IN</label>
-                <input type="time" id="checkin_time" required="required">
-            </div>
-            <div class="input_line">
-                <label for="checkout_time">CHECK OUT</label>
-                <input type="time" id="checkout_time" required="required">
-            </div>
-            <div class="input_line">
-                <input type="checkbox" id="lunch_time" checked="checked">
-                <label class="small_label" for="lunch_time">SUBTRACT LUNCH BREAK (-1 hour)</label>
-            </div>
+            <table>
+                <tr>
+                    <th>CHECK IN</th>
+                    <th>CHECK OUT</th>
+                    <th>LUNCH BREAK <span><small>(-1 hour)</small></span></th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="input_line">
+                            <input type="time" id="checkin_time" required="required">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input_line">
+                            <input type="time" id="checkout_time" required="required">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input_line">
+                            <input type="checkbox" id="lunch_time" checked="checked">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
             <hr>
+
             <div class="input_line">
                 <label for="result_time">TOTAL TIME</label>
                 <input type="text" id="result_time" readonly="readonly">
@@ -33,4 +48,5 @@
     <!-- <?!= include('javascript'); ?> -->
     <script src="./script.js"></script>
 </body>
+
 </html>

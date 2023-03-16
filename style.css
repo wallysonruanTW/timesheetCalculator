@@ -14,6 +14,12 @@
     margin-bottom: 1rem;
   }
 
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .table__header{
     height: 2rem;
   }
@@ -65,9 +71,3 @@
       background: #b51b58;
       cursor: pointer;
   }
-  
-.temp{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}

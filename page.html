@@ -16,36 +16,27 @@
                     <th class="table__header">LUNCH BREAK <small>(-1 hour)</small></th>
                     <th class="table__header">TOTAL TIME</th>
                 </tr>
-                <tr class="entry-row" onchange="updateResult('checkin_time_1', 'checkout_time_1', 'input__luch-checkbox_1', 'result__unit--1')">
+                <tr class="entry-row"
+                    onchange="updateResult('#checkin_time_1', '#checkout_time_1', '#input__luch-checkbox_1', '#result__unit--1')">
                     <td>
-                        <div>
-                            <input type="time" class="input--time" id="checkin_time_1" required="required">
-                        </div>
+                        <input type="time" class="input--time" id="checkin_time_1" required="required">
                     </td>
                     <td>
-                        <div>
-                            <input type="time" class="input--time" id="checkout_time_1" required="required">
-                        </div>
+                        <input type="time" class="input--time" id="checkout_time_1" required="required">
                     </td>
                     <td>
-                        <div>
-                            <input type="checkbox" class="input--checkbox" id="input__luch-checkbox_1" checked="checked">
-                        </div>
+                        <input type="checkbox" class="input--checkbox" id="input__luch-checkbox_1" checked="checked">
                     </td>
                     <td>
-                        <input type="text" class="input--text result result__unit" id="result__unit--1" readonly="readonly">
+                        <input type="text" class="input--text result result__unit" id="result__unit--1"
+                            readonly="readonly">
                     </td>
                 </tr>
             </table>
-
-            <div class="temp">
-                <button class="button" onclick="newEntryRow()">
-                    New entry
-                </button>
-            </div>
-
+            <button class="button" onclick="newEntryRow()">
+                New entry
+            </button>
             <hr>
-
             <div class="result--all">
                 <label class="label__result-all" for="result--all">TOTAL TIME</label>
                 <input type="text" class="result" id="result--all" readonly="readonly">

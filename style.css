@@ -2,64 +2,51 @@
       margin: 0;
   }
 
-  .timecalc {
-      text-align: center;
-  }
-
-  .timecalc * {
+  .timecalculator {
       font-family: OpenSans, Arial, sans-serif;
-  }
-
-  .timecalc form {
-      display: inline-block;
+      display: flex;
       text-align: left;
-      max-width: 320px;
+      padding: 1rem;
       background-color: #fff350;
-      border: 2px dashed #FFF;
-      padding: 8px;
   }
 
-  .timecalc .input_line,
-  .output_line {
-      display: block;
-      padding: 8px 4px;
+  table{
+
+    margin-bottom: 1rem;
   }
 
-  .timecalc .input_line label {
-      display: inline-block;
+  .table__header{
+    height: 2rem;
+  }
+
+  input {
+      width: 7rem;
+  }
+
+  .input--time,
+  .input--text {
+      padding: 0.25rem;
+      font-size: 1rem;
+  }
+
+  .input--checkbox{
+    height: 1.8rem;
+  }
+
+  .result {
+      padding: 0;
+      height: 1.8rem;
+  }
+
+  hr {
+      border-bottom: 1px solid #000;
+  }
+
+  .label__result-all {
       font-weight: bold;
-      width: 110px;
+      width: 6.87rem;
+      margin: 0 0.5rem 0 0;
   }
-
-  .timecalc .input_line .small_label {
-      font-weight: lighter;
-      font-size: 12px;
-      width: auto;
-      color: #808184;
-  }
-
-  .timecalc .input_line input[type="time"],
-  .timecalc .input_line input[type="text"] {
-      padding: 4px;
-      font-size: 16px;
-      width: 96px;
-  }
-
-  .timecalc .input_line input[type="button"] {
-      border-radius: 3px;
-      border: 1px solid #b51b58;
-      background: #ee5ba0;
-      font-size: 16px;
-      font-weight: bold;
-      color: #FFF;
-      height: 32px;
-  }
-
-  .timecalc .input_line input[type="button"]:hover {
-      background: #b51b58;
-      cursor: pointer;
-  }
-
 
   .copy-button {
       border-radius: 3px;
@@ -68,19 +55,20 @@
       font-size: 16px;
       font-weight: bold;
       color: #FFF;
-      height: 32px;
+      height: 2rem;
   }
 
-  .copy-button::before{
-    content: "\01F4CB" / " ";
+  .copy-button::before {
+      content: "\01F4CB" / "";
   }
 
   .copy-button:hover {
       background: #b51b58;
       cursor: pointer;
   }
-
-  .timecalc hr {
-      border: 0;
-      border-bottom: 5px dotted #000;
-  }
+  
+.temp{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

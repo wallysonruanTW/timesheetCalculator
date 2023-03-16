@@ -7,38 +7,48 @@
 </head>
 
 <body class="wrapper">
-    <div class="timecalc">
+    <div class="timecalculator">
         <form onchange="updateResult();">
             <table>
                 <tr>
-                    <th>CHECK IN</th>
-                    <th>CHECK OUT</th>
-                    <th>LUNCH BREAK <span><small>(-1 hour)</small></span></th>
+                    <th class="table__header">CHECK IN</th>
+                    <th class="table__header">CHECK OUT</th>
+                    <th class="table__header">LUNCH BREAK <small>(-1 hour)</small></th>
+                    <th class="table__header">TOTAL TIME</th>
                 </tr>
                 <tr>
                     <td>
-                        <div class="input_line">
-                            <input type="time" id="checkin_time" required="required">
+                        <div>
+                            <input type="time" class="input--time" id="checkin_time" required="required">
                         </div>
                     </td>
                     <td>
-                        <div class="input_line">
-                            <input type="time" id="checkout_time" required="required">
+                        <div>
+                            <input type="time" class="input--time" id="checkout_time" required="required">
                         </div>
                     </td>
                     <td>
-                        <div class="input_line">
-                            <input type="checkbox" id="lunch_time" checked="checked">
+                        <div>
+                            <input type="checkbox" class="input--checkbox" checked="checked">
                         </div>
+                    </td>
+                    <td>
+                        <input type="text" class="input--text result" readonly="readonly">
                     </td>
                 </tr>
             </table>
 
+            <div class="temp">
+                <button class="button" onclick="copyResult()">
+                    New entry
+                </button>
+            </div>
+
             <hr>
 
-            <div class="input_line">
-                <label for="result_time">TOTAL TIME</label>
-                <input type="text" id="result_time" readonly="readonly">
+            <div class="result--all">
+                <label class="label__result-all" for="result--all">TOTAL TIME</label>
+                <input type="text" class="result" id="result--all" readonly="readonly">
                 <button class="copy-button" onclick="copyResult()">
                     Copy
                 </button>

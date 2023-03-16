@@ -1,6 +1,6 @@
 function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElementId) {
-    var checkin = document.getElementByElementId(checkInElementId).value;
-    var checkout = document.getElementByElementId(checkOutElementId).value;
+    var checkin = document.querySelector(checkInElementId).value;
+    var checkout = document.querySelector(checkOutElementId).value;
 
     if (!checkin || !checkout) {
         return null;
@@ -49,7 +49,8 @@ function updateFinalResult() {
 
 
 function copyResult() {
-    var resultTime = document.querySelector("#result_time");
+    var resultTime = document.querySelector("#result--all");
     resultTime.select();
-    document.execCommand("Copy");
+    navigator.clipboard.writeText(resultTime.value);
+    alert("The value: "+ resultTime.value + " has been copied to the clipboard.");
 }

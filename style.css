@@ -53,7 +53,21 @@
       margin: 0 0.5rem 0 0;
   }
 
-  .copy-button {
+  button{
+    border-radius: 3px;
+    border: 1px solid #b51b58;
+    background: #ee5ba0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    height: 2rem;
+  }
+
+  .button--newEntry::before{
+    content: "\02795" / "";
+  }
+
+  .button--copy{
       border-radius: 3px;
       border: 1px solid #b51b58;
       background: #ee5ba0;
@@ -63,11 +77,11 @@
       height: 2rem;
   }
 
-  .copy-button::before {
+  .button--copy::before {
       content: "\01F4CB" / "";
   }
 
-  .copy-button:hover {
+  .button--newEntry:hover , .button--copy:hover {
       background: #b51b58;
       cursor: pointer;
   }

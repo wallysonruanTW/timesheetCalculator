@@ -10,37 +10,41 @@
     <div class="timecalculator">
         <form onchange="updateResultTotal();">
             <table>
-                <tr>
-                    <th class="table__header">CHECK IN</th>
-                    <th class="table__header">CHECK OUT</th>
-                    <th class="table__header">LUNCH BREAK <small>(-1 hour)</small></th>
-                    <th class="table__header">TOTAL TIME</th>
-                </tr>
-                <tr class="entry-row"
-                    onchange="updateResultUnit('#checkin_time_1', '#checkout_time_1', '#lunch_checkbox_1', 'result_unit_1')">
-                    <td>
-                        <input type="time" class="input--time" id="checkin_time_1" required="required">
-                    </td>
-                    <td>
-                        <input type="time" class="input--time" id="checkout_time_1" required="required">
-                    </td>
-                    <td>
-                        <input type="checkbox" class="input--checkbox" id="lunch_checkbox_1" checked="checked">
-                    </td>
-                    <td>
-                        <input type="text" class="input--text result result__unit" id="result_unit_1"
-                            readonly="readonly">
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th class="table__header">CHECK IN</th>
+                        <th class="table__header">CHECK OUT</th>
+                        <th class="table__header">LUNCH BREAK <small>(-1 hour)</small></th>
+                        <th class="table__header">TOTAL TIME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="entry-row"
+                        onchange="updateResultUnit('#checkin_time_1', '#checkout_time_1', '#lunch_checkbox_1', '#result_unit_1')">
+                        <td>
+                            <input type="time" class="input--time" id="checkin_time_1" required="required">
+                        </td>
+                        <td>
+                            <input type="time" class="input--time" id="checkout_time_1" required="required">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="input--checkbox" id="lunch_checkbox_1" checked="checked">
+                        </td>
+                        <td>
+                            <input type="text" class="input--text result result__unit" id="result_unit_1"
+                                readonly="readonly">
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-            <button class="button" onclick="newEntryRow()">
+            <button type="button" class="button--newEntry" onclick="newEntryRow()">
                 New entry
             </button>
             <hr>
             <div class="result__total">
                 <label class="label__result-total" for="result__total">TOTAL TIME</label>
                 <input type="text" class="result" id="result__total" readonly="readonly">
-                <button class="copy-button" onclick="copyResult()">
+                <button class="button--copy" onclick="copyResult()">
                     Copy
                 </button>
             </div>

@@ -89,7 +89,6 @@ function newEntryRow() {
     row.appendChild(columnCheckOut);
     row.appendChild(columnLunch);
     row.appendChild(columnResultUnit);
-    row.className = "entry-row";
     row.addEventListener("change", function (event) {
         let entryRow = event.target.parentNode.parentNode;
         let checkInId = entryRow.children[0].children[0].id;

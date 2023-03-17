@@ -1,86 +1,94 @@
-  .wrapper {
-    margin: 0;
-  }
+html {
+  height: 100%;
+  width: 100%;
+}
 
-  .timecalculator {
-    font-family: OpenSans, Arial, sans-serif;
-    display: flex;
-    text-align: left;
-    padding: 1rem;
-    background-color: #fff350;
-  }
+.wrapper {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
 
-  table {
-    margin-bottom: 1rem;
-  }
+.timecalculator {
+  height: 100%;
+  width: 100%;
+  font-family: OpenSans, Arial, sans-serif;
+  text-align: left;
+  background-color: #fff350;
+}
 
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
 
-  .table__header {
-    height: 2rem;
-  }
+.table__header {
+  height: 2rem;
+}
 
-  input {
-    width: 7rem;
-  }
+input {
+  width: 7rem;
+  text-align: center;
+}
 
-  .input--time,
-  .input--text {
-    padding: 0.25rem;
-    font-size: 1rem;
-  }
+.input--time,
+.input--text {
+  padding: 0.25rem;
+  font-size: 1rem;
+}
 
-  .input--checkbox {
-    height: 1.8rem;
-  }
+.input--checkbox {
+  height: 1.8rem;
+}
 
-  .result {
-    padding: 0;
-    height: 1.8rem;
-  }
+.result {
+  padding: 0;
+  height: 1.8rem;
+}
 
-  hr {
-    border-bottom: 1px solid #000;
-  }
+hr {
+  border-bottom: 1px solid #000;
+}
 
-  .label__result-all {
-    font-weight: bold;
-    width: 6.87rem;
-    margin: 0 0.5rem 0 0;
-  }
+.label__result-all {
+  font-weight: bold;
+  width: 6.87rem;
+  margin: 0 0.5rem 0 0;
+}
 
-  button {
-    border-radius: 3px;
-    border: 1px solid #b51b58;
-    background: #ee5ba0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #FFF;
-    height: 2rem;
-  }
+button {
+  border-radius: 3px;
+  border: 1px solid #b51b58;
+  background: #ee5ba0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFF;
+  height: 2rem;
+}
 
-  button:hover {
-    cursor: pointer;
-  }
+button:hover {
+  cursor: pointer;
+}
 
 
-  .button--delete-row::before {
-    content: "\02716" / "";
-  }
+.button--delete-row::before {
+  content: "\02716" / "";
+}
 
-  .button--newEntry::before {
-    content: "\02795" / "";
-  }
+.button--newEntry::before {
+  content: "\02795" / "";
+}
 
-  .button--copy::before {
-    content: "\01F4CB" / "";
-  }
+.button--copy::before {
+  content: "\01F4CB" / "";
+}
 
-  .button--delete-row:hover, .button--newEntry:hover,
-  .button--copy:hover {
-    background: #b51b58;
-  }
+.button--delete-row:hover,
+.button--newEntry:hover,
+.button--copy:hover {
+  background: #b51b58;
+}

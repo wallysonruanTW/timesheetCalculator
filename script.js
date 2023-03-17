@@ -1,6 +1,6 @@
 function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElementId) {
-    var checkIn = document.getElementById(checkInElementId).value;
-    var checkOut = document.getElementById(checkOutElementId).value;
+    let checkIn = document.getElementById(checkInElementId).value;
+    let checkOut = document.getElementById(checkOutElementId).value;
 
     if (checkIn == "") {
         checkIn = "0:00";
@@ -12,9 +12,9 @@ function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElement
 
     checkIn = convertToDecimal(checkIn);
     checkOut = convertToDecimal(checkOut);
-    var lunch = document.getElementById(lunchCheckboxElementId).checked ? 1 : 0;
+    const lunch = document.getElementById(lunchCheckboxElementId).checked ? 1 : 0;
 
-    var result = checkOut - checkIn - lunch;
+    let result = checkOut - checkIn - lunch;
 
     if (result < 0) {
         result = 0;
@@ -24,16 +24,16 @@ function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElement
 }
 
 function convertToDecimal(time) {
-    var hhmm = time.split(":");
-    var hours = parseInt(hhmm[0]);
-    var minutes = parseInt(hhmm[1]);
+    const hhmm = time.split(":");
+    const hours = parseInt(hhmm[0]);
+    const minutes = parseInt(hhmm[1]);
     return hours + minutes / 60;
 }
 
 function updateResultUnit(checkInElementId, checkOutElementId, lunchCheckboxElementId, resultContainerElementId) {
-    var resultTime = document.getElementById(resultContainerElementId);
+    const resultTime = document.getElementById(resultContainerElementId);
 
-    var time = calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElementId);
+    const time = calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElementId);
     if (time == 0) {
         return;
     }
@@ -41,8 +41,8 @@ function updateResultUnit(checkInElementId, checkOutElementId, lunchCheckboxElem
 }
 
 function updateResultTotal() {
-    let results = Array.from(document.querySelectorAll(".result__unit"));
-    let resultAll = document.querySelector("#result__total");
+    const results = Array.from(document.querySelectorAll(".result__unit"));
+    const resultAll = document.querySelector("#result__total");
 
     resultAll.value = results.reduce((accumulator, current) => {
         if(current.value == ""){
@@ -53,41 +53,41 @@ function updateResultTotal() {
 }
 
 function createNewEntryRow() {
-    let table = document.querySelector("tbody");
+    const table = document.querySelector("tbody");
 
-    let row = document.createElement("tr");
-    let columnCheckIn = document.createElement("td");
-    let columnCheckOut = document.createElement("td");
-    let columnLunch = document.createElement("td");
-    let columnResultUnit = document.createElement("td");
-    let columnDeleteRowButton = document.createElement("td");
+    const row = document.createElement("tr");
+    const columnCheckIn = document.createElement("td");
+    const columnCheckOut = document.createElement("td");
+    const columnLunch = document.createElement("td");
+    const columnResultUnit = document.createElement("td");
+    const columnDeleteRowButton = document.createElement("td");
     columnDeleteRowButton.headers = "blank";
 
-    let checkIn = document.createElement("input");
+    const checkIn = document.createElement("input");
     checkIn.type = "time";
     checkIn.required = "required";
     checkIn.className = "input--time";
     checkIn.id = "checkIn_time_" + getTotalOfEntryRowsPlusOne();
 
-    let checkOut = document.createElement("input");
+    const checkOut = document.createElement("input");
     checkOut.type = "time";
     checkOut.required = "required";
     checkOut.className = "input--time";
     checkOut.id = "checkOut_time_" + getTotalOfEntryRowsPlusOne();
 
-    let lunchCheckbox = document.createElement("input");
+    const lunchCheckbox = document.createElement("input");
     lunchCheckbox.className = "input--checkbox";
     lunchCheckbox.id = "lunch_checkbox_" + getTotalOfEntryRowsPlusOne();
     lunchCheckbox.type = "checkbox";
 
-    let resultUnit = document.createElement("input");
+    const resultUnit = document.createElement("input");
     resultUnit.classList.add("input--text", "result", "result__unit");
     resultUnit.id = "result_unit_" + getTotalOfEntryRowsPlusOne();
     resultUnit.readOnly = true;
     resultUnit.type = "text";
     resultUnit.value = 0.00;
 
-    let deleteRowButton = document.createElement("button");
+    const deleteRowButton = document.createElement("button");
     deleteRowButton.type = "button";
     deleteRowButton.classList.add("button--delete-row");
     deleteRowButton.ariaLabel = "Delete this line."
@@ -123,7 +123,7 @@ function createNewEntryRow() {
 }
 
 function getTotalOfEntryRowsPlusOne() {
-    return document.getElementsByTagName("tbody")[0].children.length + 1;
+    return document.querySelector("tbody").children.length + 1;
 }
 
 function deleteRow(event) {
@@ -133,7 +133,7 @@ function deleteRow(event) {
 }
 
 async function copyResultTotal(){
-    let resultAll = document.querySelector("#result__total");
+    const resultAll = document.querySelector("#result__total");
     
     await navigator.clipboard.writeText(resultAll.value);
     alert("Total time has been coppied.");

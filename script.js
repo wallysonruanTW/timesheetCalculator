@@ -89,6 +89,7 @@ function newEntryRow() {
     let deleteRowButton = document.createElement("button");
     deleteRowButton.type = "button";
     deleteRowButton.classList.add("button--delete-row");
+    deleteRowButton.ariaLabel = "Delete this line."
     deleteRowButton.addEventListener("click", function (event) {
         deleteRow(event);
         updateResultTotal();

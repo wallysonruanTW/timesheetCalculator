@@ -126,6 +126,8 @@ function getTotalOfEntryRowsPlusOne() {
 }
 
 function deleteRow(event) {
+    const aboveRow = event.target.parentNode.parentNode.previousElementSibling;
+    aboveRow.children[0].children[0].focus();
     event.target.parentNode.parentNode.remove();
 }
 

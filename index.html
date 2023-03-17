@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <!-- <?!= include('stylesheet'); ?> -->
@@ -30,20 +30,22 @@
                             <input type="checkbox" class="input--checkbox" id="lunch_checkbox_1">
                         </td>
                         <td>
-                            <input type="text" class="input--text result result__unit" id="result_unit_1"
-                                readonly="readonly">
+                            <input type="text" placeholder="0.00" class="input--text result result__unit"
+                                id="result_unit_1" readonly="readonly">
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <button type="button" class="button--newEntry" onclick="newEntryRow()">
+
+            <button type="button" aria-label="Add a new row to the table." class="button--newEntry"
+                onclick="newEntryRow()">
                 New entry
             </button>
-            <hr>
+
             <div class="result__total">
                 <label class="label__result-total" for="result__total">TOTAL TIME</label>
-                <input type="text" class="result" id="result__total" readonly="readonly">
-                <button class="button--copy" onclick="copyResult()">
+                <input type="text" placeholder="0.00" class="result" id="result__total" readonly="readonly">
+                <button type="button" aria-label="Copy the total time." class="button--copy" onclick="copyResult()">
                     Copy
                 </button>
             </div>

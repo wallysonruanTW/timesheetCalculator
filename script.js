@@ -79,6 +79,7 @@ function newEntryRow() {
     resultUnit.id = "result_unit_" + getTotalOfEntryRowsPlusOne();
     resultUnit.readOnly = true;
     resultUnit.type = "text";
+    resultUnit.placeholder = "0.00";
 
     columnCheckIn.appendChild(checkIn)
     columnCheckOut.appendChild(checkOut);

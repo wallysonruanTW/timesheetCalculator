@@ -44,6 +44,9 @@ function updateResultTotal() {
     let resultAll = document.querySelector("#result__total");
 
     resultAll.value = results.reduce((accumulator, current) => {
+        if(current.value == ""){
+            return "";
+        }
         return accumulator + parseFloat(current.value);
     }, 0);
 }

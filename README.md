@@ -11,10 +11,11 @@ Every time I use the calculator I need to calculate small periods of time separa
 - [x] Previous analysis to detect any lack of accessibility;
 - [x] Change the `inputs` layout structure to table;
 - [ ] Test the table to assert its accessibility;
-- [ ] Add single sums to every row;
-- [ ] Make the `TOTAL HOURS` sum all the single sums up;
-- [ ] Add a "new row" button;
-- [ ] Invite a designer to design a new layout to accomodate the new features, and to improve the accessibility.
+- [x] Add single sums to every row;
+- [x] Make the `TOTAL HOURS` sum all the single sums up;
+- [x] Add a "new row" button;
+- [ ] Invite a designer to design a new layout to accomodate the new features, and to improve the accessibility;
+- [ ] Add a warning to let the assistive technologies know that a new row has been created.
 
 ## Findings
 

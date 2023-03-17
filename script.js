@@ -2,11 +2,11 @@ function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElement
     var checkIn = document.getElementById(checkInElementId).value;
     var checkOut = document.getElementById(checkOutElementId).value;
 
-    if (!checkIn){
+    if (!checkIn) {
         checkIn = "00:00";
     }
 
-    if (!checkOut){
+    if (!checkOut) {
         checkOut = "00:00";
     }
 
@@ -68,12 +68,12 @@ function newEntryRow() {
     checkOut.required = "required";
     checkOut.className = "input--time";
     checkOut.id = "checkOut_time_" + getTotalOfEntryRowsPlusOne();
-    
+
     let lunchCheckbox = document.createElement("input");
     lunchCheckbox.className = "input--checkbox";
     lunchCheckbox.id = "lunch_checkbox_" + getTotalOfEntryRowsPlusOne();
     lunchCheckbox.type = "checkbox";
-    
+
     let resultUnit = document.createElement("input");
     resultUnit.classList.add("input--text", "result", "result__unit");
     resultUnit.id = "result_unit_" + getTotalOfEntryRowsPlusOne();
@@ -90,7 +90,7 @@ function newEntryRow() {
     row.appendChild(columnLunch);
     row.appendChild(columnResultUnit);
     row.className = "entry-row";
-    row.addEventListener("change", function(event){
+    row.addEventListener("change", function (event) {
         let entryRow = event.target.parentNode.parentNode;
         let checkInId = entryRow.children[0].children[0].id;
         let checkOutId = entryRow.children[1].children[0].id;
@@ -100,6 +100,8 @@ function newEntryRow() {
     })
 
     table.appendChild(row);
+
+    checkIn.focus();
 }
 
 function getTotalOfEntryRowsPlusOne() {

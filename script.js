@@ -127,3 +127,10 @@ function getTotalOfEntryRowsPlusOne() {
 function deleteRow(event) {
     event.target.parentNode.parentNode.remove();
 }
+
+async function copyResultTotal(){
+    let resultAll = document.querySelector("#result__total");
+    
+    await navigator.clipboard.writeText(resultAll.value);
+    alert("Total time has been coppied.");
+}

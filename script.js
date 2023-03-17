@@ -3,11 +3,11 @@ function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElement
     var checkOut = document.getElementById(checkOutElementId).value;
 
     if (checkIn == "") {
-        checkIn = "00:00";
+        checkIn = "0:00";
     }
 
     if (checkOut == "") {
-        checkOut = "00:00";
+        checkOut = "0:00";
     }
 
     checkIn = convertToDecimal(checkIn);
@@ -34,9 +34,10 @@ function updateResultUnit(checkInElementId, checkOutElementId, lunchCheckboxElem
     var resultTime = document.getElementById(resultContainerElementId);
 
     var time = calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElementId);
-    if (time) {
-        resultTime.value = time;
+    if (time == 0) {
+        return;
     }
+    resultTime.value = time;
 }
 
 function updateResultTotal() {
@@ -45,13 +46,13 @@ function updateResultTotal() {
 
     resultAll.value = results.reduce((accumulator, current) => {
         if(current.value == ""){
-            return "";
+            return 0;
         }
         return accumulator + parseFloat(current.value);
     }, 0);
 }
 
-function newEntryRow() {
+function createNewEntryRow() {
     let table = document.querySelector("tbody");
 
     let row = document.createElement("tr");
@@ -84,7 +85,7 @@ function newEntryRow() {
     resultUnit.id = "result_unit_" + getTotalOfEntryRowsPlusOne();
     resultUnit.readOnly = true;
     resultUnit.type = "text";
-    resultUnit.placeholder = "0.00";
+    resultUnit.value = 0.00;
 
     let deleteRowButton = document.createElement("button");
     deleteRowButton.type = "button";

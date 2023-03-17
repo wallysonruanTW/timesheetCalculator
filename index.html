@@ -30,7 +30,7 @@
                             <input type="checkbox" class="input--checkbox" id="lunch_checkbox_1">
                         </td>
                         <td>
-                            <input type="text" placeholder="0.00" class="input--text result result__unit"
+                            <input type="text" value="0" class="input--text result result__unit"
                                 id="result_unit_1" readonly="readonly">
                         </td>
                     </tr>
@@ -38,13 +38,13 @@
             </table>
 
             <button type="button" aria-label="Add a new row to the table." class="button--newEntry"
-                onclick="newEntryRow()">
+                onclick="createNewEntryRow()">
                 New entry
             </button>
 
             <div class="result__total">
                 <label class="label__result-total" for="result__total">TOTAL TIME</label>
-                <input type="text" placeholder="0.00" class="result" id="result__total" readonly="readonly">
+                <input type="text" value="0" class="result" id="result__total" readonly="readonly">
                 <button type="button" aria-label="Copy the total time." class="button--copy" onclick="copyResultTotal()">
                     Copy
                 </button>

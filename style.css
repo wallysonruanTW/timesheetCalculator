@@ -67,16 +67,6 @@
     content: "\02795" / "";
   }
 
-  .button--copy{
-      border-radius: 3px;
-      border: 1px solid #b51b58;
-      background: #ee5ba0;
-      font-size: 16px;
-      font-weight: bold;
-      color: #FFF;
-      height: 2rem;
-  }
-
   .button--copy::before {
       content: "\01F4CB" / "";
   }

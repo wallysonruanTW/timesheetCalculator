@@ -2,11 +2,11 @@ function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElement
     var checkIn = document.getElementById(checkInElementId).value;
     var checkOut = document.getElementById(checkOutElementId).value;
 
-    if (!checkIn) {
+    if (checkIn == "") {
         checkIn = "00:00";
     }
 
-    if (!checkOut) {
+    if (checkOut == "") {
         checkOut = "00:00";
     }
 

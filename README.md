@@ -14,8 +14,11 @@ Every time I use the calculator I need to calculate small periods of time separa
 - [x] Add single sums to every row;
 - [x] Make the `TOTAL HOURS` sum all the single sums up;
 - [x] Add a "new row" button;
-- [ ] Invite a designer to design a new layout to accomodate the new features, and to improve the accessibility;
-- [ ] Add a warning to let the assistive technologies know that a new row has been created.
+- [x] Invite a designer to design a new layout to accomodate the new features, and to improve the accessibility;
+- [ ] ~~Add a warning to let the assistive technologies know that a new row has been created;~~
+- [x] Add label to make the buttons clearer to users of assistive technologies; 
+- [x] Enable line deletion;
+- [ ] Apply the new design.
 
 ## Findings
 

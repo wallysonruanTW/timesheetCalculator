@@ -36,15 +36,12 @@ function updateResultUnit(checkInElementId, checkOutElementId, lunchCheckboxElem
 }
 
 function updateResultTotal() {
-    let results = document.querySelectorAll(".result__unit");
-    let finalResult = 0;
+    let results = Array.from(document.querySelectorAll(".result__unit"));
     let resultAll = document.querySelector("#result__total");
 
-    results.forEach((result) => {
-        finalResult += result.value;
-    });
-
-    resultAll.value = finalResult;
+    resultAll.value = results.reduce((accumulator, current) => {
+        return accumulator + parseFloat(current.value);
+    }, 0);
 }
 
 function newEntryRow() {
@@ -97,11 +94,6 @@ function newEntryRow() {
         let lunchCheckboxId = entryRow.children[2].children[0].id;
         let resultUnitId = entryRow.children[3].children[0].id;
         updateResultUnit(checkInId, checkOutId, lunchCheckboxId, resultUnitId);
-        
-        // console.log(checkInId)
-        // console.log(checkOutId)
-        // console.log(lunchCheckboxId)
-        // console.log(resultUnitId)
     })
 
     table.appendChild(row);

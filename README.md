@@ -16,8 +16,10 @@ Every time I use the calculator I need to calculate small periods of time separa
 - [x] Add a "new row" button;
 - [x] Invite a designer to design a new layout to accomodate the new features, and to improve the accessibility;
 - [ ] ~~Add a warning to let the assistive technologies know that a new row has been created;~~
-- [x] Add label to make the buttons clearer to users of assistive technologies; 
+- [x] Add label to make the buttons clearer to users of assistive technologies;
+- [x] Apply focus to the CHECK IN of the new row when NEW ENTRY button is clicked; 
 - [x] Enable line deletion;
+- [x] Apply focus in the above CHECK IN of the deleted row;
 - [ ] Apply the new design.
 
 ## Findings

@@ -72,7 +72,6 @@ function newEntryRow() {
     let lunchCheckbox = document.createElement("input");
     lunchCheckbox.className = "input--checkbox";
     lunchCheckbox.id = "lunch_checkbox_" + getTotalOfEntryRowsPlusOne();
-    lunchCheckbox.checked = true;
     lunchCheckbox.type = "checkbox";
     
     let resultUnit = document.createElement("input");

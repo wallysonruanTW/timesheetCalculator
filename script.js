@@ -1,6 +1,6 @@
 function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElementId) {
-    var checkin = document.querySelector(checkInElementId).value;
-    var checkout = document.querySelector(checkOutElementId).value;
+    var checkin = document.getElementById(checkInElementId).value;
+    var checkout = document.getElementById(checkOutElementId).value;
 
     if (!checkin || !checkout) {
         return null;
@@ -8,7 +8,7 @@ function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElement
 
     checkin = convertToDecimal(checkin);
     checkout = convertToDecimal(checkout);
-    var lunch = document.querySelector(lunchCheckboxElementId).checked ? 1 : 0;
+    var lunch = document.getElementById(lunchCheckboxElementId).checked ? 1 : 0;
 
     var result = checkout - checkin - lunch;
 
@@ -27,7 +27,7 @@ function convertToDecimal(time) {
 }
 
 function updateResultUnit(checkInElementId, checkOutElementId, lunchCheckboxElementId, resultContainerElementId) {
-    var resultTime = document.querySelector(resultContainerElementId);
+    var resultTime = document.getElementById(resultContainerElementId);
 
     var time = calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElementId);
     if (time) {
@@ -56,51 +56,58 @@ function newEntryRow() {
     let columnLunch = document.createElement("td");
     let columnResultUnit = document.createElement("td");
 
-    let inputCheckIn = createInputCheck("in");
-    let inputCheckOut = createInputCheck("out");
-    let inputLunchCheckbox = document.createElement("input");
-    inputLunchCheckbox.className = "input--checkbox";
-    inputLunchCheckbox.id = "lunch_checkbox_" + getTotalOfRowsPlusOne();
-    inputLunchCheckbox.checked = true;
-    inputLunchCheckbox.type = "checkbox";
-    let inputResultUnit = document.createElement("input");
-    inputResultUnit.classList.add("input--text", "result", "result__unit");
-    inputResultUnit.id = "result_unit_" + getTotalOfRowsPlusOne();
-    inputResultUnit.readOnly = true;
-    inputResultUnit.type = "text";
+    let checkIn = document.createElement("input");
+    checkIn.type = "time";
+    checkIn.required = "required";
+    checkIn.className = "input--time";
+    checkIn.id = "checkin_time_" + getTotalOfEntryRowsPlusOne();
 
-    columnCheckIn.appendChild(inputCheckIn)
-    columnCheckOut.appendChild(inputCheckOut);
-    columnLunch.appendChild(inputLunchCheckbox);
-    columnResultUnit.appendChild(inputResultUnit);
+    let checkOut = document.createElement("input");
+    checkOut.type = "time";
+    checkOut.required = "required";
+    checkOut.className = "input--time";
+    checkOut.id = "checkout_time_" + getTotalOfEntryRowsPlusOne();
+    
+    let lunchCheckbox = document.createElement("input");
+    lunchCheckbox.className = "input--checkbox";
+    lunchCheckbox.id = "lunch_checkbox_" + getTotalOfEntryRowsPlusOne();
+    lunchCheckbox.checked = true;
+    lunchCheckbox.type = "checkbox";
+    
+    let resultUnit = document.createElement("input");
+    resultUnit.classList.add("input--text", "result", "result__unit");
+    resultUnit.id = "result_unit_" + getTotalOfEntryRowsPlusOne();
+    resultUnit.readOnly = true;
+    resultUnit.type = "text";
+
+    columnCheckIn.appendChild(checkIn)
+    columnCheckOut.appendChild(checkOut);
+    columnLunch.appendChild(lunchCheckbox);
+    columnResultUnit.appendChild(resultUnit);
 
     row.appendChild(columnCheckIn);
     row.appendChild(columnCheckOut);
     row.appendChild(columnLunch);
     row.appendChild(columnResultUnit);
     row.className = "entry-row";
+    row.addEventListener("change", function(event){
+        let entryRow = event.target.parentNode.parentNode;
+        let checkInId = entryRow.children[0].children[0].id;
+        let checkOutId = entryRow.children[1].children[0].id;
+        let lunchCheckboxId = entryRow.children[2].children[0].id;
+        let resultUnitId = entryRow.children[3].children[0].id;
+        updateResultUnit(checkInId, checkOutId, lunchCheckboxId, resultUnitId);
+        
+        // console.log(checkInId)
+        // console.log(checkOutId)
+        // console.log(lunchCheckboxId)
+        // console.log(resultUnitId)
+    })
 
     table.appendChild(row);
 }
 
-function createInputCheck(inOrOut) {
-    let inputCheck = document.createElement("input");
-    inputCheck.type = "time";
-    inputCheck.required = "required";
-    inputCheck.className = "input--time";
-    inputCheck.id = "check" + inOrOut + "_time_" + getTotalOfRowsPlusOne();
-
-    return inputCheck;
-}
-
-function getTotalOfRowsPlusOne() {
+function getTotalOfEntryRowsPlusOne() {
     let table = document.querySelectorAll(".entry-row");
     return table.length + 1;
-}
-
-function copyResultTotal() {
-    var resultTime = document.querySelector("#result__total");
-    resultTime.select();
-    navigator.clipboard.writeText(resultTime.value);
-    alert("The value: " + resultTime.value + " has been copied to the clipboard.");
 }

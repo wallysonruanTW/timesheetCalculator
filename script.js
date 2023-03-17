@@ -105,6 +105,5 @@ function newEntryRow() {
 }
 
 function getTotalOfEntryRowsPlusOne() {
-    let table = document.querySelectorAll(".entry-row");
-    return table.length + 1;
+    return document.getElementsByTagName("tbody")[0].children.length + 1;
 }

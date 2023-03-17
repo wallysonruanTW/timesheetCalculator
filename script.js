@@ -56,6 +56,8 @@ function newEntryRow() {
     let columnCheckOut = document.createElement("td");
     let columnLunch = document.createElement("td");
     let columnResultUnit = document.createElement("td");
+    let columnDeleteRowButton = document.createElement("td");
+    columnDeleteRowButton.headers = "blank";
 
     let checkIn = document.createElement("input");
     checkIn.type = "time";
@@ -81,15 +83,26 @@ function newEntryRow() {
     resultUnit.type = "text";
     resultUnit.placeholder = "0.00";
 
+    let deleteRowButton = document.createElement("button");
+    deleteRowButton.type = "button";
+    deleteRowButton.classList.add("button--delete-row");
+    deleteRowButton.addEventListener("click", function (event) {
+        deleteRow(event);
+        updateResultTotal();
+    });
+
     columnCheckIn.appendChild(checkIn)
     columnCheckOut.appendChild(checkOut);
     columnLunch.appendChild(lunchCheckbox);
     columnResultUnit.appendChild(resultUnit);
+    columnDeleteRowButton.appendChild(deleteRowButton);
 
     row.appendChild(columnCheckIn);
     row.appendChild(columnCheckOut);
     row.appendChild(columnLunch);
     row.appendChild(columnResultUnit);
+    row.appendChild(columnDeleteRowButton);
+
     row.addEventListener("change", function (event) {
         let entryRow = event.target.parentNode.parentNode;
         let checkInId = entryRow.children[0].children[0].id;
@@ -106,4 +119,8 @@ function newEntryRow() {
 
 function getTotalOfEntryRowsPlusOne() {
     return document.getElementsByTagName("tbody")[0].children.length + 1;
+}
+
+function deleteRow(event) {
+    event.target.parentNode.parentNode.remove();
 }

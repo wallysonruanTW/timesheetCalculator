@@ -68,7 +68,7 @@
   }
 
 
-  .button--delete::before {
+  .button--delete-row::before {
     content: "\02716" / "";
   }
 
@@ -80,7 +80,7 @@
     content: "\01F4CB" / "";
   }
 
-  .button--delete:hover, .button--newEntry:hover,
+  .button--delete-row:hover, .button--newEntry:hover,
   .button--copy:hover {
     background: #b51b58;
   }

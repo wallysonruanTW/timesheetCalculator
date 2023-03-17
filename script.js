@@ -1,16 +1,20 @@
 function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElementId) {
-    var checkin = document.getElementById(checkInElementId).value;
-    var checkout = document.getElementById(checkOutElementId).value;
+    var checkIn = document.getElementById(checkInElementId).value;
+    var checkOut = document.getElementById(checkOutElementId).value;
 
-    if (!checkin || !checkout) {
-        return null;
+    if (!checkIn){
+        checkIn = "00:00";
     }
 
-    checkin = convertToDecimal(checkin);
-    checkout = convertToDecimal(checkout);
+    if (!checkOut){
+        checkOut = "00:00";
+    }
+
+    checkIn = convertToDecimal(checkIn);
+    checkOut = convertToDecimal(checkOut);
     var lunch = document.getElementById(lunchCheckboxElementId).checked ? 1 : 0;
 
-    var result = checkout - checkin - lunch;
+    var result = checkOut - checkIn - lunch;
 
     if (result < 0) {
         result = 0;
@@ -57,13 +61,13 @@ function newEntryRow() {
     checkIn.type = "time";
     checkIn.required = "required";
     checkIn.className = "input--time";
-    checkIn.id = "checkin_time_" + getTotalOfEntryRowsPlusOne();
+    checkIn.id = "checkIn_time_" + getTotalOfEntryRowsPlusOne();
 
     let checkOut = document.createElement("input");
     checkOut.type = "time";
     checkOut.required = "required";
     checkOut.className = "input--time";
-    checkOut.id = "checkout_time_" + getTotalOfEntryRowsPlusOne();
+    checkOut.id = "checkOut_time_" + getTotalOfEntryRowsPlusOne();
     
     let lunchCheckbox = document.createElement("input");
     lunchCheckbox.className = "input--checkbox";

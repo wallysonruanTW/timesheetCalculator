@@ -20,7 +20,7 @@ function calculateTime(checkInElementId, checkOutElementId, lunchCheckboxElement
         result = 0;
     }
 
-    return result.toFixed(2);
+    return parseFloat(result).toFixed(2);
 }
 
 function convertToDecimal(time) {

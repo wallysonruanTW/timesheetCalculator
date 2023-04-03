@@ -12,10 +12,10 @@
             <table>
                 <thead>
                     <tr>
-                        <th class="table__header">CHECK IN</th>
-                        <th class="table__header">CHECK OUT</th>
-                        <th class="table__header">LUNCH BREAK <small>(-1 hour)</small></th>
-                        <th class="table__header">TOTAL TIME</th>
+                        <th class="table__header" scope="col">CHECK IN</th>
+                        <th class="table__header" scope="col">CHECK OUT</th>
+                        <th class="table__header" scope="col">LUNCH BREAK <small>(-1 hour)</small></th>
+                        <th class="table__header" scope="col">TOTAL TIME</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,10 +37,14 @@
                 </tbody>
             </table>
 
+            <hr>
+
             <button type="button" aria-label="Add a new row to the table." class="button--newEntry"
                 onclick="createNewEntryRow()">
                 New entry
             </button>
+
+            <hr>
 
             <div class="result__total">
                 <label class="label__result-total" for="result__total">TOTAL TIME</label>

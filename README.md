@@ -20,7 +20,8 @@ Every time I use the calculator I need to calculate small periods of time separa
 - [x] Apply focus to the CHECK IN of the new row when NEW ENTRY button is clicked; 
 - [x] Enable line deletion;
 - [x] Apply focus in the above CHECK IN of the deleted row;
-- [ ] Apply the new design.
+- [ ] Apply the new design;
+- [ ] Add a different status message because the VoiceOver does not read the `alert` text.
 
 ## Findings
 
